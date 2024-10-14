@@ -1,0 +1,148 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: "Fredoka", sans-serif;
+  color: #ff7eff;
+  margin: 0;
+}
+
+header {
+  background-color: #5c2cff;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-bottom: 8px;
+}
+
+h1 {
+  color: transparent;
+  -webkit-text-stroke: 2px #ff7eff;
+  text-shadow: 0 0 17px #ff7eff;
+  /* text-shadow: offset-x offset-y blur-radius color; */
+  font-size: 60px;
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+main {
+  padding-left: 50px;
+  background: linear-gradient(315deg, #5a75ce, #0a1e65);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allows main to take up available space */
+}
+
+#new-todo:focus,
+#new-todo:active,
+#new-todo:hover {
+  background-color: #4d1eef;
+  outline: none;
+  color: #ff7eff;
+}
+
+input:-webkit-autofill {
+  background-color: #4d1eef !important;
+  color: #ff7eff !important;
+  -webkit-box-shadow: 0 0 0px 1000px #4d1eef inset; /* This hack ensures the autofill background matches */
+  transition: background-color 5000s ease-in-out 0s; /* Prevents flickering */
+}
+
+#radioBtns {
+  display: flex;
+  padding-block: 20px;
+  justify-content: flex-start;
+}
+
+#all,
+#open,
+#done {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 3px solid #d5ff00; /* Border color */
+  border-radius: 50%; /* Make it circular */
+
+  cursor: pointer;
+  outline: none;
+}
+
+#all:checked,
+#open:checked,
+#done:checked {
+  /* Style the selected radio button */
+  background-color: #d5ff00; /* Change the background color when checked */
+}
+
+.div-radio {
+  display: flex;
+  margin-right: 20px;
+}
+
+#addBtn {
+  background-color: #d5ff00;
+  color: #ff7eff;
+  margin-top: 20px;
+  border: transparent;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 17px;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 5px 1px #ff7eff;
+  width: 100%; /* Ensure buttons take up full width of their container */
+}
+#rmButton {
+  background-color: #9372ff;
+  color: #d5ff00;
+  border: transparent;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 17px;
+  margin-bottom: 10px;
+  box-shadow: 3px 3px 5px 1px #d5ff00;
+  margin-top: auto; /* Push the remove button to the bottom */
+  width: 100%; /* Ensure buttons take up full width of their container */
+}
+
+#add {
+  display: flex;
+  background-color: #5c2cff;
+  color: #ff7eff;
+  border: transparent;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 17px;
+  margin-bottom: 10px;
+  box-shadow: 3px 3px 5px 1px #d5ff00;
+}
+
+::placeholder {
+  color: #ff7eff;
+}
+
+.add-and-rm {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Make this section take up remaining space */
+  justify-content: flex-start;
+  padding-bottom: 20px; /* Add padding at the bottom */
+  width: 300px; /* Control the width of the buttons area */
+}
+
+input[type="checkbox"] {
+  margin-left: 10px;
+}
+
+ul {
+  padding-left: 16px;
+}
+
+li {
+  padding-block: 5px;
+}

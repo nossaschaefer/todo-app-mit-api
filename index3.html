@@ -4,45 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
     <title>Todo App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style3.css">
 </head>
 
 <body>
-    <main>
+    <header>
         <h1>Todo App</h1>
+    </header>
+    <main>
+
         <section id="radioBtns">
 
-            <div>
+            <div class="div-radio">
                 <label for="all">All</label>
                 <input type="radio" id="all" name="filter" checked>
             </div>
 
-            <div>
+            <div class="div-radio">
                 <label for="open">Open</label>
                 <input type="radio" id="open" name="filter">
             </div>
 
-            <div>
+            <div class="div-radio">
                 <label for="done">Done</label>
                 <input type="radio" id="done" name="filter">
             </div>
         </section>
         <section class="add-and-rm">
 
-            <input type="text" id="add" placeholder="Enter your Todo" style="background-color: white;"><label
-                for="add"></label>
-            <button id="addBtn">Add</button>
+            <input type="text" id="add" placeholder="Enter your Todo..."><label for="add"></label>
+            <button id="addBtn">Add New ToDos</button>
+
+            <div class="checklist">
+
+                <ul>
+                    <!-- <li id="todo">Water the plants</li> -->
+                </ul>
+            </div>
             <button id="rmButton">Remove done Todos</button>
-            <ul>
-                <!-- <li id="todo">Water the plants</li> -->
-            </ul>
         </section>
 
 
     </main>
 
-
+    <!-- <img src="photo_2024-10-09 09.20.43.jpeg" alt=""> -->
 
 
     <script src="script3.js"></script>

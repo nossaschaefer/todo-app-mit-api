@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: darkslateblue;
+  margin: 0;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 400px) 1fr; /* Three columns */
+  justify-items: center; /* Align content to the center horizontally */
+  align-items: start; /* Align content vertically (can be 'center' if you want the whole content centered vertically) */
+}
+
+header {
+  grid-row: 1;
+  text-align: center;
+}
+
+header,
+main {
+  grid-column: 2; /* Place both header and main in the middle column */
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+}
+
+#add-input-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3px;
+}
+
+h1 {
+  align-self: center;
+  font-family: Helvetica, sans-serif;
+  color: rgb(237, 78, 144);
+  grid-column: 2/3;
+  margin: 0 auto;
+  text-shadow: 1px 1px 3px lemonchiffon;
+}
+
+#todos-list {
+  color: rgb(255, 250, 115);
+}
+
+button {
+  padding: 4px;
+  background-color: mediumaquamarine;
+  color: white;
+  font-size: 17px;
+  border: transparent;
+  margin: 3px;
+
+  font-weight: lighter;
+  padding-inline: 90px;
+}
+
+#new-todo,
+#btn-add-todo,
+#btn-rm-done {
+  width: 100%; /* Set all to the same width */
+  padding: 10px;
+  border-radius: 5px; /* Add border-radius for consistency */
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+#new-todo {
+  margin-bottom: 3px;
+  text-align: center; /* Center the placeholder text */
+}
+
+#filters-wrapper {
+  background-color: lemonchiffon;
+  padding-block: 10px;
+  border-radius: 3px;
+  margin-top: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#all,
+#open,
+#done {
+  margin-left: 10px;
+}
+
+ul {
+  color: lemonchiffon;
+}
+
+li {
+  display: flex; /* Use flexbox for list items */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 10px; /* Add spacing between list items */
+}
+
+input[type="checkbox"] {
+  margin-left: 100px; /* Add space between label and checkbox */
+}

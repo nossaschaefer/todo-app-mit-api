@@ -125,6 +125,13 @@ function addTodo() {
     });
 }
 
+newTodo.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Prevent form submission if inside a form
+    addTodo(); // Call the function to add a new todo
+  }
+});
+
 // Function to remove all done todos
 function removeDoneTodos() {
   const doneTodos = todos.filter((todo) => todo.done); // Get all done todos
@@ -165,3 +172,5 @@ rmButton.addEventListener("click", removeDoneTodos);
 
 // Load todos on page load
 loadTodos();
+
+newTodo.focus();

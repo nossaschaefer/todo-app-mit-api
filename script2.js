@@ -40,9 +40,7 @@ async function getTodos() {
   filterTodos();
 }
 
-// State initial ausgeben
 function renderTodos(todos = state.todos) {
-  // Bevor der neue State ausgegeben wird, die vorhandene Liste leeren
   todosOutput.innerText = "";
 
   // Auf jedes Todo nacheinander zugreifen
@@ -141,13 +139,27 @@ async function rmDoneTodos() {
   filterTodos();
 }
 
-function updateTodo(event) {
+async function updateTodo(event) {
   const todo = event.target.todoElement;
+  todo.done = !todo.done; // Toggle the 'done' state
 
-  todo.done = !todo.done;
+  // Send a PATCH or PUT request to the server to update the todo
+  try {
+    const response = await fetch(`${apiUrl}${todo.id}`, {
+      method: "PATCH", // You can also use "PUT" depending on your server
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ done: todo.done }),
+    });
 
-  // Veränderten State in Local Storage speichern
-  localStorage.setItem("state", JSON.stringify(state));
+    if (!response.ok) {
+      throw new Error(`Failed to update todo with id: ${todo.id}`);
+    }
+
+    // Update the state and save it to localStorage
+    localStorage.setItem("state", JSON.stringify(state));
+  } catch (error) {
+    console.error("Error updating todo:", error);
+  }
 }
 
 function setFilter(event) {
